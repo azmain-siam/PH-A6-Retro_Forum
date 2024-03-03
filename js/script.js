@@ -16,11 +16,12 @@ const displayPosts = (posts) => {
     const postCard = document.createElement("div");
     postCard.classList = `flex flex-col lg:flex-row gap-6 bg-[#F3F3F5] hover:bg-[#797DFC1A] mb-6 border border-[#F3F3F5] hover:border-main-color duration-200 cursor-pointer p-6 lg:p-10 rounded-3xl`;
 
-    const badgeColor = post.isActive ? "bg-green-600" : "bg-red-600";
+    const badgeColor = post.isActive ? "bg-green-500" : "bg-red-500";
+
     postCard.innerHTML = `
       <div>
         <div class="indicator">
-          <span id="indicator-icon" class="indicator-item badge border-white ${badgeColor}"></span>
+          <span id="indicator-icon" class="indicator-item  badge border-white scale-[0.8] ${badgeColor} mt-1"></span>
           <div class="grid w-[85px] h-[85px] bg-base-300 place-items-center rounded-2xl">
             <img class="w-full rounded-2xl object-cover" src="${post.image}">
           </div>
@@ -49,7 +50,7 @@ const displayPosts = (posts) => {
               <span>${post.posted_time} min</span>
             </div>
           </div>
-          <img class="hover:scale-[1.15] w-8 lg:w-10 duration-300" src="images/green-mail.svg">
+          <img class="hover:scale-[1.1] w-8 lg:w-10 duration-300" src="images/green-mail.svg">
         </div>
       </div>
     `;
