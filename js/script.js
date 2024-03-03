@@ -32,11 +32,11 @@ const displayPosts = (posts) => {
           <p>Author: <span>${phone.author?.name}</span></p>
         </div>
         <h3 class="text-lg lg:text-xl font-bold ">${phone.title}</h3>
-        <p class="font-inter text-dark-color font-medium w-[580px]">${phone.description}</p>
-        <hr class="border-[1.5px] border-dashed">
+        <p class="font-inter text-dark-color font-medium lg:w-[580px]">${phone.description}</p>
+        <hr>
         <div class="flex justify-between ">
-          <div class="flex gap-6 font-inter text-dark-color font-medium">
-            <div class="flex gap-2 items-center">
+          <div class="flex gap-4 lg:gap-6 text-sm lg:text-base font-inter text-dark-color font-medium">
+            <div class="flex gap-[6px] lg:gap-2 items-center">
               <img src="images/messege.svg">
               <span>${phone.comment_count}</span>
             </div>
@@ -49,7 +49,7 @@ const displayPosts = (posts) => {
               <span>${phone.posted_time} min</span>
             </div>
           </div>
-          <img class="hover:scale-[1.15] w-10 duration-300" src="images/green-mail.svg">
+          <img class="hover:scale-[1.15] w-8 lg:w-10 duration-300" src="images/green-mail.svg">
         </div>
       </div>
     `;
