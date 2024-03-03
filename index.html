@@ -14,7 +14,9 @@
         extend: {
           colors: {
             clifford: '#da373d',
-            'main-color': '#1DD100',
+            'main-color': '#797DFC',
+            'black-color': '#12132D',
+            'dark-color': '#12132D99',
           }
         }
       }
@@ -22,24 +24,82 @@
   </script>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/e819ca8460.js" crossorigin="anonymous"></script>
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
     rel="stylesheet">
   <style>
     .font-inter {
       font-family: "Inter", sans-serif;
     }
 
-    .font-raleway {
-      font-family: "Raleway", sans-serif;
+    .font-mulish {
+      font-family: "Mulish", sans-serif;
     }
   </style>
 </head>
 
-<body>
+<body class="font-mulish">
+  <header class="w-[93%] lg:w-11/12 max-w-7xl mx-auto">
+    <nav class="mt-6">
+      <div class="navbar bg-white justify-between">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="p-2 mr-1 mt-[2px] -ml-2 hover:bg-slate-100 rounded-full lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 -ml-2 space-y-1 z-[1] p-3 shadow-lg bg-white rounded-box w-44">
+              <li><a>Home</a></li>
+              <li><a>Post</a></li>
+              <li><a>Add</a></li>
+              <li><a>Bookmarks</a></li>
+            </ul>
+          </div>
+          <h1 class="text-2xl lg:text-4xl font-black cursor-default text-black-color">Socify</h1>
+        </div>
+        <div class="navbar-end hidden lg:flex space-x-5">
+          <ul class="flex gap-3 text-base items-center font-medium text-dark-color">
+            <div
+              class="h-[57px] w-[57px] cursor-pointer tooltip border border-[rgba(3, 7, 18, 0.1)] rounded-full flex justify-center items-center"
+              data-tip="Home">
+              <img src="images/home.svg">
+            </div>
+            <div
+              class="h-[57px] w-[57px] cursor-pointer tooltip border border-[rgba(3, 7, 18, 0.1)] rounded-full flex justify-center items-center"
+              data-tip="Post">
+              <img src="images/pen.svg">
+            </div>
+            <div
+              class="h-[57px] w-[57px] cursor-pointer tooltip border border-[rgba(3, 7, 18, 0.1)] rounded-full flex justify-center items-center"
+              data-tip="Add">
+              <img src="images/Vector.svg">
+            </div>
+            <div
+              class="h-[57px] w-[57px] cursor-pointer tooltip border border-[rgba(3, 7, 18, 0.1)] rounded-full flex justify-center items-center"
+              data-tip="Bookmarks">
+              <img src="images/flag.svg">
+            </div>
+
+          </ul>
+        </div>
+        <div class="min-w-max ml-5">
+          <button
+            class="px-4 md:px-8 py-2 md:py-4 bg-main-color border-2 border-main-color text-base md:text-xl rounded-full font-bold text-white hover:text-main-color hover:bg-white duration-300">Sign
+            In</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main></main>
+
+  <footer></footer>
 
 
   <script src="js/script.js"></script>
