@@ -126,9 +126,9 @@
             mug!
           </p>
           <div class="min-h-max min-w-min bg-white rounded-full p-2 lg:p-3 flex justify-around">
-            <input type="text" placeholder="Search here anything"
+            <input id="search-field" type="text" placeholder="Search here anything"
               class="w-[80%] rounded-full outline-none px-3 lg:px-4 font-medium placeholder:font-medium text-base lg:text-lg">
-            <button
+            <button onclick="searchHandle()"
               class="btn btn-primary px-4 md:px-7 bg-main-color border-2 border-main-color text-base md:text-xl rounded-full font-bold text-white">Search</button>
           </div>
         </div>
@@ -156,9 +156,9 @@
 
 
       <!-- right side -->
-      <div class="bg-[#F3F3F5] p-6 rounded-3xl lg:w-[35%] h-min">
+      <div class="bg-[#F3F3F5] p-4 lg:p-6 rounded-3xl lg:w-[35%] h-min">
         <div id="read-container" class="space-y-4">
-          <div class="flex justify-between w-full">
+          <div class="flex justify-between w-full px-2">
             <h3 class="font-bold text-black-color text-lg lg:text-xl">Title</h3>
             <div class="flex gap-2 items-center">
               <img src="images/doubletick.svg">
