@@ -50,12 +50,62 @@ const displayPosts = (posts) => {
               <span>${post.posted_time} min</span>
             </div>
           </div>
-          <img class="hover:scale-[1.1] w-8 lg:w-10 duration-300" src="images/green-mail.svg">
+          <div onclick = "markRead('${post.title}', '${post.view_count}')">
+            <img class="hover:scale-[1.1] w-8 lg:w-10 duration-300" src="images/green-mail.svg">
+          </div>
         </div>
       </div>
     `;
     postsContainer.appendChild(postCard);
+    // const markButton = document.querySelectorAll(".mark-btn");
+    // console.log(markButton);
+    // markButton.addEventListener("click", function () {
+    //   // console.log(post.title);
+    // });
   });
 };
+
+// const markAs = async (data) => {
+//   const res = await fetch(
+//     "https://openapi.programming-hero.com/api/retro-forum/posts"
+//   );
+//   const data = await res.json();
+//   posts = data.posts;
+//   markRead(posts);
+// };
+
+let count = 0;
+
+const markRead = (data, data1) => {
+  console.log(data, data1);
+  const readContainer = document.getElementById("read-container");
+  const readElements = document.createElement("div");
+  readElements.classList = `flex p-4 bg-white justify-between rounded-3xl items-center gap-2`;
+
+  readElements.innerHTML = `
+    <h3 class="font-bold text-sm lg:text-base">${data}</h3>
+    <div class="flex gap-1 lg:gap-2 text-sm lg:text-base items-center min-w-max">
+      <img src="images/eye.svg">
+      <span>${data1}</span>
+    </div>
+  `;
+  readContainer.appendChild(readElements);
+  count++;
+  console.log(count);
+
+  const countNumber = document.getElementById("count-number");
+  countNumber.innerText = count;
+};
+// const markRead = (posts) => {
+//   const markButton = document.getElementById("mark-btn");
+//   console.log(markButton);
+//   let count = 0;
+
+//   posts.forEach((post) => {
+//     const mark = () => {
+//       console.log(post);
+//     };
+//   });
+// };
 
 loadPosts();
