@@ -37,7 +37,7 @@ const displayPosts = (posts) => {
           <p>Author: <span>${post.author?.name}</span></p>
         </div>
         <h3 class="text-lg lg:text-xl font-bold ">${post.title}</h3>
-        <p class="font-inter text-dark-color font-medium lg:w-[580px]">${post.description}</p>
+        <p class="font-inter text-dark-color font-medium lg:max-w-[580px]">${post.description}</p>
         <hr>
         <div class="flex justify-between ">
           <div class="flex gap-4 lg:gap-6 text-sm lg:text-base font-inter text-dark-color font-medium">
@@ -123,7 +123,7 @@ const displayLatest = (data) => {
     // console.log(post);
     const cardContainer = document.createElement("div");
     cardContainer.innerHTML = `
-    <div id="card-container" class="p-5 lg:p-6 border space-y-3 rounded-3xl">
+    <div id="card-container" class="p-5 lg:p-6 border space-y-3 rounded-3xl cursor-pointer border-[#F3F3F5] hover:border-main-color duration-300 hover:bg-[#d7d7ff1a]">
       <div class="w-full h-[190px] rounded-3xl">
         <img class="object-cover w-full h-[190px] rounded-3xl"  src="${
           post.cover_image
