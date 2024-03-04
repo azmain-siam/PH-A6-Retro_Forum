@@ -4,6 +4,7 @@ const loadPosts = async (searchText) => {
   );
   const data = await res.json();
   posts = data.posts;
+
   displayPosts(posts);
 };
 
@@ -60,6 +61,7 @@ const displayPosts = (posts) => {
     `;
     postsContainer.appendChild(postCard);
   });
+  toggleSpinner(false);
 };
 
 let count = 0;
@@ -86,9 +88,19 @@ const markRead = (data, data1) => {
 };
 
 const searchHandle = () => {
+  toggleSpinner(true);
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
   loadPosts(searchText);
 };
 
+const toggleSpinner = (isLoading) => {
+  const loadingBar = document.getElementById("loading-bar");
+  if (isLoading) {
+    loadingBar.classList.remove("hidden");
+  } else {
+    loadingBar.classList.add("hidden");
+  }
+};
+toggleSpinner(true);
 loadPosts("");
