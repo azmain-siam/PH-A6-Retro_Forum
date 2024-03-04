@@ -57,22 +57,8 @@ const displayPosts = (posts) => {
       </div>
     `;
     postsContainer.appendChild(postCard);
-    // const markButton = document.querySelectorAll(".mark-btn");
-    // console.log(markButton);
-    // markButton.addEventListener("click", function () {
-    //   // console.log(post.title);
-    // });
   });
 };
-
-// const markAs = async (data) => {
-//   const res = await fetch(
-//     "https://openapi.programming-hero.com/api/retro-forum/posts"
-//   );
-//   const data = await res.json();
-//   posts = data.posts;
-//   markRead(posts);
-// };
 
 let count = 0;
 
@@ -96,16 +82,5 @@ const markRead = (data, data1) => {
   const countNumber = document.getElementById("count-number");
   countNumber.innerText = count;
 };
-// const markRead = (posts) => {
-//   const markButton = document.getElementById("mark-btn");
-//   console.log(markButton);
-//   let count = 0;
-
-//   posts.forEach((post) => {
-//     const mark = () => {
-//       console.log(post);
-//     };
-//   });
-// };
 
 loadPosts();
