@@ -19,7 +19,7 @@ const displayPosts = (posts) => {
     const postCard = document.createElement("div");
     postCard.classList = `flex flex-col lg:flex-row gap-6 bg-[#F3F3F5] hover:bg-[#797DFC1A] mb-6 border border-[#F3F3F5] hover:border-main-color duration-200 cursor-pointer p-6 lg:p-10 rounded-3xl`;
 
-    const badgeColor = post.isActive ? "bg-green-500" : "bg-red-500";
+    const badgeColor = post.isActive ? "bg-[#10B981]" : "bg-[#FF3434]";
 
     postCard.innerHTML = `
       <div>
@@ -99,7 +99,10 @@ const toggleSpinner = (isLoading) => {
   if (isLoading) {
     loadingBar.classList.remove("hidden");
   } else {
-    loadingBar.classList.add("hidden");
+    // Ensure the spinner stays visible for at least 2 seconds
+    setTimeout(() => {
+      loadingBar.classList.add("hidden");
+    }, 2000); // Adjusted timeout based on elapsed time
   }
 };
 
