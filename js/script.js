@@ -4,8 +4,9 @@ const loadPosts = async (searchText) => {
   );
   const data = await res.json();
   posts = data.posts;
-
-  displayPosts(posts);
+  setTimeout(() => {
+    displayPosts(posts);
+  }, 2000); // Adjusted timeout based on elapsed time
 };
 
 const displayPosts = (posts) => {
@@ -89,6 +90,9 @@ const markRead = (data, data1) => {
 
 const searchHandle = () => {
   toggleSpinner(true);
+  const postsContainer = document.getElementById("posts-container");
+
+  postsContainer.innerHTML = "";
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
   loadPosts(searchText);
@@ -99,10 +103,7 @@ const toggleSpinner = (isLoading) => {
   if (isLoading) {
     loadingBar.classList.remove("hidden");
   } else {
-    // Ensure the spinner stays visible for at least 2 seconds
-    setTimeout(() => {
-      loadingBar.classList.add("hidden");
-    }, 2000); // Adjusted timeout based on elapsed time
+    loadingBar.classList.add("hidden");
   }
 };
 
