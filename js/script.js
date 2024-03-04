@@ -82,7 +82,7 @@ const markRead = (data, data1) => {
   `;
   readContainer.appendChild(readElements);
   count++;
-  console.log(count);
+  // console.log(count);
 
   const countNumber = document.getElementById("count-number");
   countNumber.innerText = count;
@@ -120,7 +120,7 @@ const displayLatest = (data) => {
   const latestPostContainer = document.getElementById("whole-container");
 
   data.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const cardContainer = document.createElement("div");
     cardContainer.innerHTML = `
     <div id="card-container" class="p-5 lg:p-6 border space-y-3 rounded-3xl">
@@ -158,7 +158,6 @@ const displayLatest = (data) => {
       </div>
     </div>
   `;
-
     latestPostContainer.appendChild(cardContainer);
   });
 };
