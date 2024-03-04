@@ -102,5 +102,63 @@ const toggleSpinner = (isLoading) => {
     loadingBar.classList.add("hidden");
   }
 };
+
+const loadLatest = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await res.json();
+  // console.log(data[0], data[1], data[2]);
+  displayLatest(data);
+};
+
+const displayLatest = (data) => {
+  const latestPostContainer = document.getElementById("whole-container");
+
+  data.forEach((post) => {
+    console.log(post);
+    const cardContainer = document.createElement("div");
+    cardContainer.innerHTML = `
+    <div id="card-container" class="p-5 lg:p-6 border space-y-3 rounded-3xl">
+      <div class="w-full h-[190px] rounded-3xl">
+        <img class="object-cover w-full h-[190px] rounded-3xl"  src="${
+          post.cover_image
+        }">
+      </div>
+      <div class="flex items-center gap-2 lg:text-lg text-dark-color font-medium">
+        <img src="images/calender.svg">
+        <p>${post.author?.posted_date || "No Publish Date"}</p>
+      </div>
+      <div class="space-y-2">
+        <h1 class="text-black-color font-extrabold text-lg lg:text-xl">${
+          post.title
+        }</h1>
+        <p class="text-dark-color font-medium text-base lg:text-lg">${
+          post.description
+        }</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="w-11 h-11 rounded-full">
+          <img class="w-full h-full rounded-full object-cover" src="${
+            post.profile_image
+          }">
+        </div>
+        <div>
+          <h3 class="text-black-color font-extrabold text-base lg:text-lg">${
+            post.author?.name
+          }</h3>
+          <p class="text-dark-color font-medium lg:text-base text-sm">${
+            post.author?.designation || "Unknown"
+          }</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+    latestPostContainer.appendChild(cardContainer);
+  });
+};
+
+loadLatest();
 toggleSpinner(true);
 loadPosts("");
